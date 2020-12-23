@@ -32,9 +32,15 @@ class GoodsBoxItem extends StatelessWidget {
     }
     Widget wImage;
     if(imageWidth!=null){
-      wImage = CachedNetworkImage(imageUrl: url,width: imageWidth,height: imageWidth,);
+      wImage = CachedNetworkImage(imageUrl: url,width: imageWidth,height: imageWidth,
+        // placeholder: (context, url) => CircularProgressIndicator(),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+      );
     }else{
-      wImage = CachedNetworkImage(imageUrl: url,);
+      wImage = CachedNetworkImage(imageUrl: url,
+        // placeholder: (context, url) => CircularProgressIndicator(),
+        errorWidget: (context, url, error) => Icon(Icons.error),
+      );
     }
     return InkWell(
       onTap: (){

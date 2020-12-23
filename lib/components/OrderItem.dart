@@ -95,6 +95,8 @@ class OrderItem extends StatelessWidget {
                 imageUrl: url,
                 width: 90,
                 height: 90,
+                // placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
               Expanded(
                   child: Container(

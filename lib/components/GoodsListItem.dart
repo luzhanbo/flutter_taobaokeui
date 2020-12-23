@@ -26,6 +26,8 @@ class GoodsListItem extends StatelessWidget {
                 imageUrl: item.goodsThumbnailUrl,
                 width: 120,
                 height: 120,
+                // placeholder: (context, url) => CircularProgressIndicator(),
+                errorWidget: (context, url, error) => Icon(Icons.error),
               ),
               Expanded(
                   child: Container(
